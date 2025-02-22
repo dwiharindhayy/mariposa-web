@@ -1,0 +1,67 @@
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.title-auth h1{
+    font-size: 24px;
+}
+
+.btn-google button{
+    align-items: center;
+    justify-content: center;
+    width: 188px;
+    height: 45px;
+    background-color: white;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-style: solid;
+}
+
+.btn-facebook button{
+    align-items: center;
+    justify-content: center;
+    width: 188px;
+    height: 45px;
+    background-color: white;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: #E5E5E5;
+    border-style: solid;
+}
+
+.btn-register{
+    margin-top: 30px;
+}
+
+.form-register{
+    margin-top: 70px; 
+}
+
+.form-register input{
+    height: 35px;
+}
+
+.form-register label{
+    font-size: 16px;
+    color: #9d9d9d;
+    font-weight: 500;
+}
+
+.form-register button{
+    width: 427px;
+    height: 45px;
+    background-color: #EDBADC;
+    color: white;
+    font-size: 16px;
+    font-weight: 700px;
+    border-style: none;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.disclamer p{
+    font-size: 16px;
+    color: #9d9d9d;
+    margin: 0;
+}
