@@ -44,15 +44,15 @@
         <form action="" method="post">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Full Name</label>
-                <input required type="text" class="form-control">
+                <input required type="text" name="fullName" class="form-control">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email Address</label>
-                <input required type="email" class="form-control">
+                <input required type="email" name="email" class="form-control">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Password</label>
-                <input required type="password" class="form-control">
+                <input required type="password" name="password" class="form-control">
             </div>
 
             <button type="submit">Create Account</button>
