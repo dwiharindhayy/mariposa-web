@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authController; 
+use App\Http\Controllers\productController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,8 @@ use App\Http\Controllers\authController;
 */
 
 route::get('/login', [authController::class, 'getLogin']);
+route::post('/login/post', [authController::class, 'postLogin']);
+
 route::get('/register', [authController::class, 'getRegister']);
+
+route::get('/product/all', [productController::class, 'getProductAll']);
