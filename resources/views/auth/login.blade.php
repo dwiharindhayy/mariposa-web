@@ -41,14 +41,15 @@
     </div>
 
     <div class="form-register">
-        <form action="" method="post">
+        <form action="/login/post" method="post">
+            @csrf
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email Address</label>
-                <input required type="email" class="form-control">
+                <input required type="email" name="email" class="form-control">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Password</label>
-                <input required type="password" class="form-control">
+                <input required type="password" name="password" class="form-control">
             </div>
 
             <button type="submit">Login</button>
