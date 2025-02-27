@@ -69,3 +69,10 @@ body{
 .page-product-all{
     background-color: #FFF1F2;
 }
+
+.container-category{
+    width: 1284px;
+    height: 100px;
+    background-color: white;
+    padding: 35px 0 32px 0;
+}
