@@ -116,103 +116,28 @@
 </div>
 
 <div class="font-label-big" style="margin-top:200px;">
-  <h1>Bluss</h1>
-</div>
-
-<div class="container-product-list">
-  <div class="product-view-home">
-    <div class="image-product">
-      <img src="https://awsimages.detik.net.id/customthumb/2014/02/21/10/jokowikaget.jpg" alt="">
-    </div>
-    <h1 class="title-product-home mt-3">Gigot Sleeve Ruffle Hem Blouse</h1>
-    <h1 class="price-product-home mt-3">Rp 999.000</h1>
-    <h1 class="size-product-home">size: S, M, L, XL</h1>
-  </div>
-
-  <div class="product-view-home">
-    <div class="image-product">
-      <img src="https://awsimages.detik.net.id/customthumb/2014/02/21/10/jokowikaget.jpg" alt="">
-    </div>
-    <h1 class="title-product-home mt-3">Gigot Sleeve Ruffle Hem Blouse</h1>
-    <h1 class="price-product-home mt-3">Rp 999.000</h1>
-    <h1 class="size-product-home">size: S, M, L, XL</h1>
-  </div>
-
-  <div class="product-view-home">
-    <div class="image-product">
-      <img src="https://awsimages.detik.net.id/customthumb/2014/02/21/10/jokowikaget.jpg" alt="">
-    </div>
-    <h1 class="title-product-home mt-3">Gigot Sleeve Ruffle Hem Blouse</h1>
-    <h1 class="price-product-home mt-3">Rp 999.000</h1>
-    <h1 class="size-product-home">size: S, M, L, XL</h1>
-  </div>
-</div>
-
-<div class="font-label-big" style="margin-top:200px;">
-  <h1>Rok</h1>
-</div>
-
-<div class="container-product-list">
-  <div class="product-view-home">
-    <div class="image-product">
-      <img src="https://awsimages.detik.net.id/customthumb/2014/02/21/10/jokowikaget.jpg" alt="">
-    </div>
-    <h1 class="title-product-home mt-3">Gigot Sleeve Ruffle Hem Blouse</h1>
-    <h1 class="price-product-home mt-3">Rp 999.000</h1>
-    <h1 class="size-product-home">size: S, M, L, XL</h1>
-  </div>
-</div>
-
-<div class="font-label-big" style="margin-top:200px;">
-  <h1>Dress</h1>
-</div>
-
-<div class="container-product-list">
-  <div class="product-view-home">
-    <div class="image-product">
-      <img src="https://awsimages.detik.net.id/customthumb/2014/02/21/10/jokowikaget.jpg" alt="">
-    </div>
-    <h1 class="title-product-home mt-3">Gigot Sleeve Ruffle Hem Blouse</h1>
-    <h1 class="price-product-home mt-3">Rp 999.000</h1>
-    <h1 class="size-product-home">size: S, M, L, XL</h1>
-  </div>
-</div>
-
-<div class="font-label-big" style="margin-top:200px;">
-  <h1>Make up</h1>
-</div>
-
-<div class="container-product-list">
-  <div class="product-view-home">
-    <div class="image-product">
-      <img src="https://awsimages.detik.net.id/customthumb/2014/02/21/10/jokowikaget.jpg" alt="">
-    </div>
-    <h1 class="title-product-home mt-3">Gigot Sleeve Ruffle Hem Blouse</h1>
-    <h1 class="price-product-home mt-3">Rp 999.000</h1>
-    <h1 class="size-product-home">size: S, M, L, XL</h1>
-  </div>
-</div>
-
-<div class="font-label-big" style="margin-top:200px;">
-  <h1>Heels</h1>
-</div>
-
-<div class="container-product-list">
-  <div class="product-view-home">
-    <div class="image-product">
-      <img src="https://awsimages.detik.net.id/customthumb/2014/02/21/10/jokowikaget.jpg" alt="">
-    </div>
-    <h1 class="title-product-home mt-3">Gigot Sleeve Ruffle Hem Blouse</h1>
-    <h1 class="price-product-home mt-3">Rp 999.000</h1>
-    <h1 class="size-product-home">size: S, M, L, XL</h1>
-  </div>
-</div>
-
-<div class="font-label-big" style="margin-top:200px;">
   <h1>Bag</h1>
 </div>
 
-<div class="container-product-list mb-4">
+<div class="container-product-list">
+  <div class="product-view-home">
+    <div class="image-product">
+      <img src="https://awsimages.detik.net.id/customthumb/2014/02/21/10/jokowikaget.jpg" alt="">
+    </div>
+    <h1 class="title-product-home mt-3">Gigot Sleeve Ruffle Hem Blouse</h1>
+    <h1 class="price-product-home mt-3">Rp 999.000</h1>
+    <h1 class="size-product-home">size: S, M, L, XL</h1>
+  </div>
+
+  <div class="product-view-home">
+    <div class="image-product">
+      <img src="https://awsimages.detik.net.id/customthumb/2014/02/21/10/jokowikaget.jpg" alt="">
+    </div>
+    <h1 class="title-product-home mt-3">Gigot Sleeve Ruffle Hem Blouse</h1>
+    <h1 class="price-product-home mt-3">Rp 999.000</h1>
+    <h1 class="size-product-home">size: S, M, L, XL</h1>
+  </div>
+
   <div class="product-view-home">
     <div class="image-product">
       <img src="https://awsimages.detik.net.id/customthumb/2014/02/21/10/jokowikaget.jpg" alt="">
