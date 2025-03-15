@@ -8,38 +8,32 @@ use Illuminate\Support\Facades\DB;
 class productController extends Controller
 {
     public function getProductAll(){
-        return view('product.all');
+        $categories = ['bluss', 'make up', 'rok', 'bag', 'dress', 'heels'];
+        $productsByCategory = [];
+    
+        foreach ($categories as $category) {
+            $productsByCategory[$category] = DB::table('products')->where('category', $category)->get();
+        }
+    
+        return view('product.all', compact('productsByCategory'));
     }
 
-    public function getProductBag()
+    public function getProductByCategory($category)
     {
-        return view('product.category-bag');
+        $products = DB::table('products')->where('category', $category)->get();
+        return view('product.category', compact('products', 'category'));
     }
 
-    public function getProductBluss()
-    {
-        return view('product.category-bluss');
+    public function getProductDetail($id)
+{
+    $product = DB::table('products')->where('id_product', $id)->first();
+    
+    if (!$product) {
+        abort(404);
     }
 
-    public function getProductDress()
-    {
-        return view('product.category-dress');
-    }
-
-    public function getProductHeels()
-    {
-        return view('product.category-heels');
-    }
-
-    public function getProductMakeup()
-    {
-        return view('product.category-makeup');
-    }
-
-    public function getProductRok()
-    {
-        return view('product.category-rok');
-    }
+    return view('product.detail', compact('product'));
+}
 
     public function getUpload(){
         return view('upload');

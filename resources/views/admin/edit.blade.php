@@ -63,6 +63,10 @@
             <label class="form-label">Price</label>
             <input type="text" class="form-control" name="price" value="{{ old('price', $product->price ?? '') }}">
          </div>
+         <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Description</label>
+              <input type="text" class="form-control" name='description' value="{{ old('price', $product->description ?? '') }}">
+         </div>
          <div class="mb-4">
            <label for="exampleFormControlInput1" class="form-label">Category</label>
            <select class="form-select" name="category" aria-label="Default select example">
@@ -70,7 +74,7 @@
              <option value="dress">Dress</option>
              <option value="bag">Bag</option>
              <option value="heels">Heels</option>
-             <option value="make up">Make Up</option>
+             <option value="make-up">Make Up</option>
              <option value="rok">Rok</option>
            </select>
          </div>

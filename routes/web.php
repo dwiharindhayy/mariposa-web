@@ -29,13 +29,10 @@ route::post('/login/post', [authController::class, 'postLogin']);
 
 route::get('/register', [authController::class, 'getRegister']);
 
-route::get('/product/all', [productController::class, 'getProductAll']);
-Route::get('/product/bag', [ProductController::class, 'getProductBag']);
-Route::get('/product/bluss', [ProductController::class, 'getProductBluss']);
-Route::get('/product/dress', [ProductController::class, 'getProductDress']);
-Route::get('/product/heels', [ProductController::class, 'getProductHeels']);
-Route::get('/product/make-up', [ProductController::class, 'getProductMakeup']);
-Route::get('/product/rok', [ProductController::class, 'getProductRok']);
+Route::get('/product/all', [ProductController::class, 'getProductAll']);
+
+Route::get('/product/{id}', [ProductController::class, 'getProductDetail'])->where('id', '[0-9]+');
+Route::get('/product/{category}', [ProductController::class, 'getProductByCategory'])->where('category', '[a-zA-Z\-]+');
 
 route::get('/login', [authController::class, 'getLogin']);
 

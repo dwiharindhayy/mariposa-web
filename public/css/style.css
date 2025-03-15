@@ -241,3 +241,12 @@ body{
 .list-product-right button{
     width: 100px;
 }
+.product-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-link h1 {
+  text-decoration: none;
+}
+

@@ -58,7 +58,11 @@
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Price</label>
-              <input type="text" class="form-control" name='price'>
+              <input type="number" class="form-control" name='price'>
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Description</label>
+              <input type="text" class="form-control" name='description'>
             </div>
             <div class="mb-4">
                 <label for="exampleFormControlInput1" class="form-label">Category</label>
@@ -67,7 +71,7 @@
                   <option value="dress">Dress</option>
                   <option value="bag">Bag</option>
                   <option value="heels">Heels</option>
-                  <option value="make up">Make Up</option>
+                  <option value="make-up">Make Up</option>
                   <option value="rok">Rok</option>
                 </select>
             </div>

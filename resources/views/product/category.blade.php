@@ -15,7 +15,7 @@
 </head>
 <body class="page-product-all">
 <nav class="navbar navbar-expand-lg" style="background-color:#F5D5D7; border-style:solid; border-width:0px 0px 1px 0px">
-<div class="container-fluid">
+  <div class="container-fluid">
     <a class="navbar-brand" href="/product/all">
       <img src="{{ asset('asset/icon.png')}}" alt="Logo" width="100" height="50">
     </a>
@@ -23,29 +23,23 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
+      <form class="d-flex mx-auto" role="search" action="/search" method="GET">
+        <input style="width:700px;" class="form-control" type="search" placeholder="Search" aria-label="Search" name="query">
+      </form>
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Product</a>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="#">
             <img src="{{ asset('asset/Shopping cart.png')}}" alt="Logo" width="28" height="28">
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item mt-1">
           <a class="nav-link" href="#">
-            <img src="{{ asset('asset/User.png')}}" alt="Logo" width="30" height="30">
+            <p style="margin:0;"> | Nama akun</p>
           </a>
         </li>
       </ul>
     </div>
-</div>
+  </div>
 </nav>
 
 <div class="container mt-4">
@@ -116,36 +110,24 @@
 </div>
 
 <div class="font-label-big" style="margin-top:200px;">
-  <h1>Dress</h1>
+  <h1>
+    {{ $category === 'make-up' ? 'Make Up' : ucfirst($category) }}
+  </h1>
 </div>
 
 <div class="container-product-list">
-  <div class="product-view-home">
-    <div class="image-product">
-      <img src="https://awsimages.detik.net.id/customthumb/2014/02/21/10/jokowikaget.jpg" alt="">
-    </div>
-    <h1 class="title-product-home mt-3">Gigot Sleeve Ruffle Hem Blouse</h1>
-    <h1 class="price-product-home mt-3">Rp 999.000</h1>
-    <h1 class="size-product-home">size: S, M, L, XL</h1>
-  </div>
-
-  <div class="product-view-home">
-    <div class="image-product">
-      <img src="https://awsimages.detik.net.id/customthumb/2014/02/21/10/jokowikaget.jpg" alt="">
-    </div>
-    <h1 class="title-product-home mt-3">Gigot Sleeve Ruffle Hem Blouse</h1>
-    <h1 class="price-product-home mt-3">Rp 999.000</h1>
-    <h1 class="size-product-home">size: S, M, L, XL</h1>
-  </div>
-
-  <div class="product-view-home">
-    <div class="image-product">
-      <img src="https://awsimages.detik.net.id/customthumb/2014/02/21/10/jokowikaget.jpg" alt="">
-    </div>
-    <h1 class="title-product-home mt-3">Gigot Sleeve Ruffle Hem Blouse</h1>
-    <h1 class="price-product-home mt-3">Rp 999.000</h1>
-    <h1 class="size-product-home">size: S, M, L, XL</h1>
-  </div>
+  @foreach ($products as $product)
+    <a href="{{ url('/product/' . $product->id_product) }}" class="product-link">
+      <div class="product-view-home">
+        <div class="image-product">
+          <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
+        </div>
+        <h1 class="title-product-home mt-3">{{ $product->name }}</h1>
+        <h1 class="price-product-home mt-3">Rp {{ number_format($product->price, 0, ',', '.') }}</h1>
+        <h1 class="size-product-home">Size: {{ strtoupper($product->size) }}</h1>
+      </div>
+    </a>
+  @endforeach
 </div>
 
 <!-- <footer class="footer">

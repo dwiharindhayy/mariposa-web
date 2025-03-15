@@ -45,6 +45,7 @@ class adminController extends Controller
                 'category' => $request->input('category'),
                 'size' => $size,
                 'price' => $request->input('price'),
+                'description' => $request->input('description'),
                 'image' => $imagePath
             ]);
 
@@ -53,6 +54,7 @@ class adminController extends Controller
                 'name' => $request->input('name'),
                 'category' => $request->input('category'),
                 'size' => $size,
+                'description' => $request->input('description'),
                 'price' => $request->input('price')
             ]);
         }
@@ -70,6 +72,7 @@ class adminController extends Controller
             'image' => $imagePath,
             'size' => $size,
             'category' => $request->input('category'),
+            'description' => $request->input('description'),
             'price' => $request->input('price'),
         ]);
 
