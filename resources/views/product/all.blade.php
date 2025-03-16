@@ -23,9 +23,6 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <form class="d-flex mx-auto" role="search" action="/search" method="GET">
-        <input style="width:700px;" class="form-control" type="search" placeholder="Search" aria-label="Search" name="query">
-      </form>
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <a class="nav-link" href="#">

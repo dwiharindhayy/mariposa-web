@@ -249,4 +249,27 @@ body{
 .product-link h1 {
   text-decoration: none;
 }
+.image-product-big{
+    width: 533px;
+    height: 614px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-product-big img{
+    width: 451px;
+    height: 518px;
+    object-fit: cover;
+}
+
+.detail-product{
+    width: 588px;
+}
+.detail-product h1{
+    font-size: 40px;
+    font-weight: 500;
+}
 

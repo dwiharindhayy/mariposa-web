@@ -41,7 +41,8 @@
     </div>
 
     <div class="form-register">
-        <form action="" method="post">
+        <form action="/register/post" method="post">
+            @csrf
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Full Name</label>
                 <input required type="text" name="fullName" class="form-control">

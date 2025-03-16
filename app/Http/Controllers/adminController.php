@@ -31,6 +31,8 @@ class adminController extends Controller
         $product = DB::table('products')->where('id_product', $id)->first();
 
         $size = strtoupper($request->input('size'));
+        $sizeArray = array_map('trim', explode(',', $size));
+        $size = implode(', ', $sizeArray);
 
 
         if (!$product) {
@@ -64,8 +66,11 @@ class adminController extends Controller
 
     public function postAddProduct(Request $request){
         //dd($request->all());
-        $size = strtoupper($request->input('size'));
         $imagePath = $request->file('image')->store('products', 'public');
+
+        $size = strtoupper($request->input('size'));
+        $sizeArray = array_map('trim', explode(',', $size));
+        $size = implode(', ', $sizeArray);
 
         DB::table('products')->insert([
             'name' => $request->input('name'),

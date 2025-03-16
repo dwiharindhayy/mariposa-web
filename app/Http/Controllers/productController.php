@@ -8,12 +8,14 @@ use Illuminate\Support\Facades\DB;
 class productController extends Controller
 {
     public function getProductAll(){
-        $categories = ['bluss', 'make up', 'rok', 'bag', 'dress', 'heels'];
+        $categories = ['bluss', 'make-up', 'rok', 'bag', 'dress', 'heels'];
         $productsByCategory = [];
     
         foreach ($categories as $category) {
             $productsByCategory[$category] = DB::table('products')->where('category', $category)->get();
         }
+
+        //dd($productsByCategory);
     
         return view('product.all', compact('productsByCategory'));
     }
@@ -25,7 +27,8 @@ class productController extends Controller
     }
 
     public function getProductDetail($id)
-{
+    
+    {
     $product = DB::table('products')->where('id_product', $id)->first();
     
     if (!$product) {

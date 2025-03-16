@@ -42,6 +42,19 @@
   </div>
 </nav>
 
+<div class="container d-flex mt-5" style="gap:100px;">
+  <div class="detail-left">
+    <div class="image-product-big">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbclQfxSWk32fEXmMjUAH0bq1hCKKQXTUxqQ&s" alt="Product">
+    </div>
+  </div>
+  <div class="detail-right">
+    <div class="detail-product">
+      <h1>Women'S Square Neck Puff Sleeve Lace Insert Shirt</h1>
+    </div>
+  </div>
+</div>
+
 
 <!-- <footer class="footer">
   <div class="container-footer">

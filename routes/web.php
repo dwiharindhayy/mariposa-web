@@ -28,6 +28,7 @@ route::get('/login', [authController::class, 'getLogin']);
 route::post('/login/post', [authController::class, 'postLogin']);
 
 route::get('/register', [authController::class, 'getRegister']);
+route::post('/register/post', [authController::class, 'postRegister']);
 
 Route::get('/product/all', [ProductController::class, 'getProductAll']);
 
