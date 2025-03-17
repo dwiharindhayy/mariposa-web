@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id('id_cart');
             $table->unsignedBigInteger('id_user');
             $table->unsignedBigInteger('id_product');
+            $table->integer('price');
+            $table->string('size');
             $table->timestamps();
 
             $table->foreign('id_user')->references('id_user')->on('users')->onDelete('cascade');

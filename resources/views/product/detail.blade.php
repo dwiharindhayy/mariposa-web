@@ -45,12 +45,36 @@
 <div class="container d-flex mt-5" style="gap:100px;">
   <div class="detail-left">
     <div class="image-product-big">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbclQfxSWk32fEXmMjUAH0bq1hCKKQXTUxqQ&s" alt="Product">
+      <img src="{{ asset('storage/' . $product->image) }}" alt="Product Image" class="img-fluid">
     </div>
   </div>
   <div class="detail-right">
     <div class="detail-product">
-      <h1>Women'S Square Neck Puff Sleeve Lace Insert Shirt</h1>
+      <h1>{{$product->name}}</h1>
+      <br>
+      <h1 style='font-size:28px;'>Rp. {{$product->price}}</h1>
+    </div>
+    <div class="size-container mt-4">
+      <h1>Size</h1>
+      <form id="sizeForm" action="/product/{{$product->id_product}}/add/{{$user->id_user}}" method="POST">
+        <div class="btn-group btn-group-toggle d-flex flex-wrap" data-toggle="buttons">
+          @foreach($sizes as $size)
+            <label class="btn btn-outline-secondary flex-fill m-1">
+              <input type="radio" name="size" value="{{ $size }}" autocomplete="off"> {{ $size }}
+            </label>
+          @endforeach
+        </div>
+
+        <div class="description-container mt-4">
+          <h1 style='font-size:28px; color:black;'>Keterangan</h1>
+          <h2>{{$product->description}}</h2>
+        </div>
+        <br><br><br><br><br>
+        <input type="hidden" name="price" value="{{$product->price}}">
+        <div class="btn-add-cart mt-4">
+          <button type="submit">Add to Cart</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
@@ -63,6 +87,7 @@
     </div>
   </div>
 </footer> -->
-
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

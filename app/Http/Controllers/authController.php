@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Hash;
 
 class authController extends Controller
 {
@@ -12,15 +14,28 @@ class authController extends Controller
         return view("auth.login");
     }
 
-    public function postLogin(Request $request){
-        $credentials = $request->only('email', 'password');
-        
-        if (Auth::attempt($credentials)) {
-            return redirect(Auth::user()->is_admin ? '/admin/product' : '/product/all');
+    public function postLogin(Request $request)
+    {
+        $email = $request->input('email');
+        $password = $request->input('password');
+    
+        $user = DB::table('users')->where('email', $email)->first();
+    
+        if (!$user || !Hash::check($password, $user->password)) {
+            return back()->withErrors([
+                'email' => 'The provided credentials are incorrect.',
+            ]);
         }
-        
-        return back()->withErrors(['email' => 'Invalid credentials']);
+    
+        Auth::loginUsingId($user->id_user);
+    
+        if ($user->is_admin) {
+            return redirect('/admin/product');
+        } else {
+            return redirect('/product/all');
+        }
     }
+    
     
     public function getRegister(){
         return view("auth.register");

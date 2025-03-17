@@ -1,42 +1,44 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\authController; 
-use App\Http\Controllers\productController; 
-use App\Http\Controllers\adminController; 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AdminController;
+use App\Http\Middleware\EnsureUserIsAuthenticated;
+
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
+| Di sini kamu bisa mendaftarkan semua route untuk aplikasi kamu.
+| Route ini dimuat oleh RouteServiceProvider di dalam grup yang memiliki
+| middleware 'web' secara default.
+|--------------------------------------------------------------------------
 */
-route::get('/admin/product', [adminController::class, 'getAllProduct']);
-route::get('/admin/product/add', [adminController::class, 'getAddProduct']);
-route::get('/admin/product/edit/{id}', [adminController::class, 'getEditProduct']);
 
-route::post('/admin/product/add/post', [adminController::class, 'postAddProduct']);
-route::post('/admin/product/delete/{id}', [adminController::class, 'deleteProduct']);
-route::post('/admin/product/edit/{id}/post', [adminController::class, 'postEditProduct']);
+// Route Autentikasi (Tanpa Middleware)
+Route::get('/login', [AuthController::class, 'getLogin'])->name('login');
+Route::post('/login/post', [AuthController::class, 'postLogin']);
+Route::get('/register', [AuthController::class, 'getRegister']);
+Route::post('/register/post', [AuthController::class, 'postRegister']);
 
+// Route yang Butuh Autentikasi
+Route::middleware([EnsureUserIsAuthenticated::class])->group(function () {
+     // Admin Routes
+    Route::prefix('admin')->group(function () {
+        Route::get('/product', [AdminController::class, 'getAllProduct']);
+        Route::get('/product/add', [AdminController::class, 'getAddProduct']);
+        Route::get('/product/edit/{id}', [AdminController::class, 'getEditProduct']);
+        
+        Route::post('/product/add/post', [AdminController::class, 'postAddProduct']);
+        Route::post('/product/delete/{id}', [AdminController::class, 'deleteProduct']);
+        Route::post('/product/edit/{id}/post', [AdminController::class, 'postEditProduct']);
+    });
 
-route::get('/login', [authController::class, 'getLogin']);
-route::post('/login/post', [authController::class, 'postLogin']);
+    // Product Routes
+    Route::get('/product/all', [ProductController::class, 'getProductAll']);
+    Route::get('/product/{id}', [ProductController::class, 'getProductDetail'])->where('id', '[0-9]+');
+    Route::get('/product/category/{category}', [ProductController::class, 'getProductByCategory'])->where('category', '[a-zA-Z\-]+');
 
-route::get('/register', [authController::class, 'getRegister']);
-route::post('/register/post', [authController::class, 'postRegister']);
-
-Route::get('/product/all', [ProductController::class, 'getProductAll']);
-
-Route::get('/product/{id}', [ProductController::class, 'getProductDetail'])->where('id', '[0-9]+');
-Route::get('/product/{category}', [ProductController::class, 'getProductByCategory'])->where('category', '[a-zA-Z\-]+');
-
-route::get('/login', [authController::class, 'getLogin']);
-
-
-route::get('/upload', [productController::class, 'getUpload']);
-route::post('/upload/post', [productController::class, 'postUpload']);
+});

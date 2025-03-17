@@ -272,4 +272,36 @@ body{
     font-size: 40px;
     font-weight: 500;
 }
+.btn-group-toggle input[type="radio"] {
+  display: none;
+}
+
+.size-container h1{
+    font-size: 20px;
+    font-weight: 500;
+    color: #808080;
+
+}
+.size-container h2{
+    font-size: 15px;
+    font-weight: 400;
+    color: black;
+
+}
+
+.description-container{
+    width: 588px;
+    height: 100px;
+}
+
+.btn-add-cart button{
+    width: 588px;
+    height: 60px;
+    background-color: #F5D5D7;
+    color: black;
+    font-size: 16px;
+    font-weight: 700px;
+    border-style: none;
+    border-radius: 8px;
+}
 
