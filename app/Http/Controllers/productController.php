@@ -53,10 +53,32 @@ class productController extends Controller
     
         return view('product.detail', compact('product', 'sizes', 'user'));
     }
-    
 
-    public function getUpload(){
-        return view('upload');
+    public function postAddToCart(Request $request, $id_product)
+    {
+        $product = DB::table('products')->where('id_product', $id_product)->first();
+    
+        if (!$product) {
+            abort(404);
+        }
+    
+        $id_user = Auth::user()->id_user;
+        //dd($id_user);
+        $user = DB::table('users')->where('id_user', $id_user)->first();
+    
+        if (!$user) {
+            abort(404);
+        }
+    
+        DB::table('carts')->insert([
+            'id_user' => $id_user,
+            'id_product' => $id_product,
+            'price' => $request->price, 
+            'size' => $request->size
+        ]);
+    
+        return redirect('/product/all');
     }
+    
 
 }

@@ -56,7 +56,8 @@
     </div>
     <div class="size-container mt-4">
       <h1>Size</h1>
-      <form id="sizeForm" action="/product/{{$product->id_product}}/add/{{$user->id_user}}" method="POST">
+      <form id="sizeForm" action="/product/{{$product->id_product}}/add" method="POST">
+        @csrf
         <div class="btn-group btn-group-toggle d-flex flex-wrap" data-toggle="buttons">
           @foreach($sizes as $size)
             <label class="btn btn-outline-secondary flex-fill m-1">

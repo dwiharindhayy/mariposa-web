@@ -41,4 +41,6 @@ Route::middleware([EnsureUserIsAuthenticated::class])->group(function () {
     Route::get('/product/{id}', [ProductController::class, 'getProductDetail'])->where('id', '[0-9]+');
     Route::get('/product/category/{category}', [ProductController::class, 'getProductByCategory'])->where('category', '[a-zA-Z\-]+');
 
+    Route::post('/product/{id_product}/add', [ProductController::class, 'postAddToCart']);
+
 });
