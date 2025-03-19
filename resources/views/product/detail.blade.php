@@ -33,8 +33,8 @@
           </a>
         </li>
         <li class="nav-item mt-1">
-          <a class="nav-link" href="#">
-            <p style="margin:0;"> | Nama akun</p>
+          <a class="nav-link disabled" href="/product/all">
+            <p style="margin:0;"> | {{$nameUser}}</p>
           </a>
         </li>
       </ul>
@@ -61,7 +61,7 @@
         <div class="btn-group btn-group-toggle d-flex flex-wrap" data-toggle="buttons">
           @foreach($sizes as $size)
             <label class="btn btn-outline-secondary flex-fill m-1">
-              <input type="radio" name="size" value="{{ $size }}" autocomplete="off"> {{ $size }}
+              <input required type="radio" name="size" value="{{ $size }}" autocomplete="off"> {{ $size }}
             </label>
           @endforeach
         </div>
@@ -80,7 +80,7 @@
   </div>
 </div>
 
-
+<br><br><br>
 <!-- <footer class="footer">
   <div class="container-footer">
     <div class="footer-left">

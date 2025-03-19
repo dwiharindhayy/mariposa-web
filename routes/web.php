@@ -39,8 +39,16 @@ Route::middleware([EnsureUserIsAuthenticated::class])->group(function () {
     // Product Routes
     Route::get('/product/all', [ProductController::class, 'getProductAll']);
     Route::get('/product/{id}', [ProductController::class, 'getProductDetail'])->where('id', '[0-9]+');
-    Route::get('/product/category/{category}', [ProductController::class, 'getProductByCategory'])->where('category', '[a-zA-Z\-]+');
+    Route::get('/product/{category}', [ProductController::class, 'getProductByCategory'])->where('category', '[a-zA-Z\-]+');
 
     Route::post('/product/{id_product}/add', [ProductController::class, 'postAddToCart']);
+
+    Route::get('/cart', [ProductController::class, 'getCart']);
+    Route::post('/cart/checkout/post', [ProductController::class, 'postCartCheckout']);
+
+    Route::post('/cart/delete', [ProductController::class, 'deleteCartItem']);
+
+    Route::get('/search', [ProductController::class, 'searchProduct']);
+
 
 });

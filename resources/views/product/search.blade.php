@@ -25,7 +25,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="/cart">
+          <a class="nav-link" href="#">
             <img src="{{ asset('asset/Shopping cart.png')}}" alt="Logo" width="28" height="28">
           </a>
         </li>
@@ -58,74 +58,20 @@
 
 <br><br><br>
 
-<div class="font-label-big">
-  <h1>Kategori Pilihan</h1>
-</div>
-
-<div class="container-category mt-3">
-  <div class="container-icon">
-    <a href="/product/bluss">
-      <img src="{{ asset('asset/baju.png')}}" alt="category" width="70" height="70">
-      <h1>Bluss</h1>
-    </a>
-  </div>
-
-  <div class="container-icon">
-    <a href="/product/dress">
-      <img src="{{ asset('asset/dress.png')}}" alt="category" width="70" height="70">
-      <h1>Dress</h1>
-    </a>
-  </div>
-
-  <div class="container-icon">
-    <a href="/product/rok">
-      <img src="{{ asset('asset/rok.png')}}" alt="category" width="70" height="70">
-      <h1>Rok</h1>
-    </a>
-  </div>  
-  
-  <div class="container-icon">
-    <a href="/product/make-up">
-      <img src="{{ asset('asset/make up.png')}}" alt="category" width="70" height="70">
-      <h1>Make up</h1>
-    </a>
-  </div>
-
-  <div class="container-icon">
-    <a href="/product/heels">
-      <img src="{{ asset('asset/heels.png')}}" alt="category" width="70" height="70">
-      <h1>Heels</h1>
-    </a>
-  </div>
-
-  <div class="container-icon">
-    <a href="/product/bag">
-      <img src="{{ asset('asset/tas.png')}}" alt="category" width="70" height="70">
-      <h1>Bag</h1>
-    </a>
-  </div>
-</div>
-
-@foreach ($productsByCategory as $category => $products)
-  <div class="font-label-big" style="margin-top: 200px;">
-    <h1>{{ ucfirst($category) }}</h1>
-  </div>
-
-  <div class="container-product-list">
-    @foreach ($products as $product)
-      <a href="/product/{{ $product->id_product }}" class="product-link">
-        <div class="product-view-home">
-          <div class="image-product">
-            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
-          </div>
-          <h1 class="title-product-home mt-3">{{ $product->name }}</h1>
-          <h1 class="price-product-home mt-3">Rp {{ number_format($product->price, 0, ',', '.') }}</h1>
-          <h1 class="size-product-home">Size: {{ strtoupper($product->size) }}</h1>
+<div class="container-product-list">
+  @foreach ($products as $product)
+    <a href="{{ url('/product/' . $product->id_product) }}" class="product-link">
+      <div class="product-view-home">
+        <div class="image-product">
+          <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
         </div>
-      </a>
-    @endforeach
-  </div>
-@endforeach
+        <h1 class="title-product-home mt-3">{{ $product->name }}</h1>
+        <h1 class="price-product-home mt-3">Rp {{ number_format($product->price, 0, ',', '.') }}</h1>
+        <h1 class="size-product-home">Size: {{ strtoupper($product->size) }}</h1>
+      </div>
+    </a>
+  @endforeach
+</div>
 
 <!-- <footer class="footer">
   <div class="container-footer">

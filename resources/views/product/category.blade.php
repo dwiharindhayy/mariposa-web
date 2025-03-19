@@ -30,8 +30,8 @@
           </a>
         </li>
         <li class="nav-item mt-1">
-          <a class="nav-link" href="#">
-            <p style="margin:0;"> | Nama akun</p>
+          <a class="nav-link disabled" href="/product/all">
+            <p style="margin:0;"> | {{$nameUser}}</p>
           </a>
         </li>
       </ul>
@@ -48,8 +48,8 @@
                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
               </svg>
             </i>
-            <form action="" method="post">
-              <input type="text" class="form-control form-input" placeholder="Search">
+            <form role="search" action="/search" method="GET">
+              <input type="text" class="form-control form-input" placeholder="Search" name="query">
             </form>
          </div>
       </div>
@@ -134,6 +134,6 @@
     </div>
   </div>
 </footer> -->
-
+<br><br><br>
 </body>
 </html>
