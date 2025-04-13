@@ -52,3 +52,11 @@ Route::middleware([EnsureUserIsAuthenticated::class])->group(function () {
 
 
 });
+
+Route::fallback(function () {
+    if (auth()->check()) {
+        return redirect('/product/all');
+    } else {
+        return redirect('/login');
+    }
+});
